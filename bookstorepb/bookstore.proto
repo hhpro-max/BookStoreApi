@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package bookstore;
+
+option go_package = "BookStoreApi/bookstorepb";
+
+service Bookstore {
+  rpc GetBook(BookRequest) returns (BookResponse);
+}
+
+message BookRequest {
+  string isbn = 1;
+}
+
+message BookResponse {
+  string title = 1;
+  string author = 2;
+}
